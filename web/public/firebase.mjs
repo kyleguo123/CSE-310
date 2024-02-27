@@ -1,5 +1,5 @@
-import {change_stock_price,change_percentage} from "./elementupdater.mjs";
-export async function FIREBASE_GetName(){
+import {change_stock_price,change_percentage,change_chart} from "./elementupdater.mjs";
+export async function FIREBASE_GetPrice(){
   const name = "stock_price"
   const DateRef = firebase.database().ref(`${name}`);
   let stock_price = 0; 
@@ -15,7 +15,8 @@ export async function FIREBASE_GetName(){
 export function FIREBASE_StartListening(){
   
   const stock_price_Ref = firebase.database().ref(`stock_price`);
-  const percentage_Ref = firebase.database().ref(`pge`);
+  const percentage_Ref = firebase.database().ref(`percentage`);
+  const stock_date_Ref = firebase.database().ref(`stock_data`);
 
   stock_price_Ref.on('value', (snapshot) => {
     let stock_price = snapshot.val();
@@ -24,9 +25,13 @@ export function FIREBASE_StartListening(){
 
 
   percentage_Ref.on('value', (snapshot) => {
-    let percentage = snapshot.val();
-    change_percentage(percentage)
+    let Percentage = snapshot.val();
+    change_percentage(Percentage)
+  });
+
+  stock_date_Ref.on('value', (snapshot) => {
+    let stock_data = snapshot.val();
+    console.log(stock_data)
+    change_chart(stock_data)
   });
 }
-
-

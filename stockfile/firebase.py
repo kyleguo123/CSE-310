@@ -13,6 +13,16 @@ ref = db.reference()
 def update_stock_price(stock_price):
     global ref
     # Retrieve data from the database
-    data = ref.get()
-    if data["stock_price"] != stock_price:
-        ref.update({"stock_price":stock_price})
+    # data = ref.get()
+    # if data["stock_price"] != stock_price:
+    ref.update({"stock_price":stock_price})
+
+def undate_interest_percentage(interest):
+    global ref
+
+    ref.update({"Percentage":interest})
+
+def undate_chart(stock_data):
+    global ref
+
+    ref.update({"stock_data":stock_data})

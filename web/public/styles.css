@@ -1,0 +1,152 @@
+body {
+    background-color: #383333; /* Light grey background color */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color:#fff;
+}
+
+#pagename{
+    margin-left:10px; 
+}
+.redcolor{
+    color: #DA4343;
+}
+.greencolor{
+    color: #0FFF7E;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #0978c2;
+}
+
+.maingrid{
+    display: grid;
+    grid-template-rows: 70px 150px 250px 300px 70px;
+    padding: 20px;
+    padding-top: 0%;
+}
+
+.headergrid{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 70% 30% ;
+}
+
+#loginbutton{
+    height: 40px;
+    margin: auto;
+    margin-right: 0;
+}
+
+.stockinfo{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display:grid;
+    grid-template-rows: 60% 40%;
+    margin-top: 30px;
+}
+.stockpricegrid{
+    margin: auto;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-auto-flow: column;
+}
+
+.arrowimg{
+    width: 20px;
+    margin: auto;
+    margin-right: 10px;
+}
+
+#stockprice{
+    margin:auto;
+    font-size: 40px;
+}
+
+#percentage{
+    margin:auto;
+    font-size: 2em;
+}
+
+.stockChartClass{
+    margin-right:20px;
+    grid-row: 2/5;
+}
+
+#history{
+    margin-top: 40px;
+}
+
+.historybox{
+    height: 200px;
+    background-color: black;
+    border:solid 2px #3498db;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+
+.historylist{
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.buttons {
+    display: grid;
+    grid-auto-flow: column;
+}
+.actionbutton{
+    width: 90%;
+    margin:auto;
+}
+
+@media (min-width: 750px) {
+    .maingrid{
+        grid-template-rows: 70px 150px 300px 70px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .stockinfo{
+        grid-column: 2/3;
+    }
+    #stockchart{
+        width: 90%;
+        grid-column: 1/2;
+        grid-row: 2/5;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+    .headergrid{
+        grid-column: 1/3;
+    }
+    #stockprice{
+        font-size: 50px;
+    }
+    #percentage{
+        font-size: 40px;
+    }
+}
+@media (max-width: 300px){
+    #pagename{
+        font-size: 20px;
+        padding-top: 10px;
+    }
+}
+
+  
+  
